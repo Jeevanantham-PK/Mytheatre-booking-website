@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Payment - My Theatre</title>
+
+    <link rel="stylesheet" href="payment.css">
+
+</head>
+
+<body>
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header>
+
+        <h1>🎬 My Theatre</h1>
+
+        <a href="index.html">
+            ← Back to Movies
+        </a>
+
+    </header>
+
+
+    <!-- ================================
+         PAYMENT PAGE
+    ================================= -->
+
+    <main>
+
+        <h2>Complete Your Payment</h2>
+
+        <p class="subtitle">
+            Choose your preferred payment method
+        </p>
+
+
+        <!-- ================================
+             BOOKING SUMMARY
+        ================================= -->
+
+        <section class="booking-card">
+
+            <h3>Booking Summary</h3>
+
+            <div class="detail-row">
+
+                <span>Movie</span>
+
+                <strong id="movieName">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>Date</span>
+
+                <strong id="showDate">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>Show Time</span>
+
+                <strong id="showTime">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>Selected Seats</span>
+
+                <strong id="selectedSeats">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row total-row">
+
+                <span>Total Amount</span>
+
+                <strong>
+                    ₹<span id="totalPrice">0</span>
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             PAYMENT METHODS
+        ================================= -->
+
+        <section class="payment-card">
+
+            <h3>Payment Method</h3>
+
+
+            <!-- UPI -->
+
+            <label class="payment-option">
+
+                <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="upi"
+                    onchange="showPaymentForm('upi')">
+
+                <span class="payment-icon">
+                    📱
+                </span>
+
+                <span>
+                    <strong>UPI</strong>
+                    <small>Google Pay / PhonePe / Paytm</small>
+                </span>
+
+            </label>
+
+
+            <!-- CARD -->
+
+            <label class="payment-option">
+
+                <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="card"
+                    onchange="showPaymentForm('card')">
+
+                <span class="payment-icon">
+                    💳
+                </span>
+
+                <span>
+                    <strong>Credit / Debit Card</strong>
+                    <small>Visa / Mastercard / RuPay</small>
+                </span>
+
+            </label>
+
+
+            <!-- NET BANKING -->
+
+            <label class="payment-option">
+
+                <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="netbanking"
+                    onchange="showPaymentForm('netbanking')">
+
+                <span class="payment-icon">
+                    🏦
+                </span>
+
+                <span>
+                    <strong>Net Banking</strong>
+                    <small>Pay using your bank account</small>
+                </span>
+
+            </label>
+
+
+            <!-- ================================
+                 UPI FORM
+            ================================= -->
+
+            <div
+                id="upiForm"
+                class="payment-form">
+
+                <label>
+                    UPI ID
+                </label>
+
+                <input
+                    type="text"
+                    id="upiId"
+                    placeholder="example@upi">
+
+            </div>
+
+
+            <!-- ================================
+                 CARD FORM
+            ================================= -->
+
+            <div
+                id="cardForm"
+                class="payment-form">
+
+                <label>
+                    Card Number
+                </label>
+
+                <input
+                    type="text"
+                    id="cardNumber"
+                    maxlength="16"
+                    placeholder="1234 5678 9012 3456">
+
+                <div class="card-row">
+
+                    <div>
+
+                        <label>
+                            Expiry
+                        </label>
+
+                        <input
+                            type="text"
+                            id="expiry"
+                            placeholder="MM/YY"
+                            maxlength="5">
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            CVV
+                        </label>
+
+                        <input
+                            type="password"
+                            id="cvv"
+                            placeholder="123"
+                            maxlength="3">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================
+                 NET BANKING FORM
+            ================================= -->
+
+            <div
+                id="netbankingForm"
+                class="payment-form">
+
+                <label>
+                    Select Bank
+                </label>
+
+                <select id="bank">
+
+                    <option value="">
+                        Select your bank
+                    </option>
+
+                    <option value="SBI">
+                        State Bank of India
+                    </option>
+
+                    <option value="HDFC">
+                        HDFC Bank
+                    </option>
+
+                    <option value="ICICI">
+                        ICICI Bank
+                    </option>
+
+                    <option value="AXIS">
+                        Axis Bank
+                    </option>
+
+                    <option value="CANARA">
+                        Canara Bank
+                    </option>
+
+                    <option value="OTHER">
+                        Other Bank
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ================================
+                 PAY BUTTON
+            ================================= -->
+
+            <button
+                id="payButton"
+                onclick="makePayment()">
+
+                Pay Now
+
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             BOOKING CONFIRMATION
+        ================================= -->
+
+        <section
+            id="confirmation"
+            class="confirmation">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>
+                Booking Confirmed!
+            </h2>
+
+            <p>
+                Your movie tickets have been booked successfully.
+            </p>
+
+
+            <div class="ticket">
+
+                <h3>
+                    🎬 My Theatre
+                </h3>
+
+
+                <p>
+                    Movie:
+                    <strong id="confirmMovie">
+                        -
+                    </strong>
+                </p>
+
+
+                <p>
+                    Date:
+                    <strong id="confirmDate">
+                        -
+                    </strong>
+                </p>
+
+
+                <p>
+                    Time:
+                    <strong id="confirmTime">
+                        -
+                    </strong>
+                </p>
+
+
+                <p>
+                    Seats:
+                    <strong id="confirmSeats">
+                        -
+                    </strong>
+                </p>
+
+
+                <p>
+                    Amount:
+                    <strong>
+                        ₹<span id="confirmAmount">
+                            0
+                        </span>
+                    </strong>
+                </p>
+
+            </div>
+
+
+            <button
+                class="home-button"
+                onclick="goHome()">
+
+                Back to Movies
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="payment.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,766 @@
+/* ================================
+   GENERAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b10;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    width: 100%;
+    height: 75px;
+
+    background: #111118;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    border-bottom: 1px solid #292936;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Theatre Logo */
+
+header h1 {
+    font-size: 25px;
+    color: #ff3d71;
+    letter-spacing: 0.5px;
+}
+
+
+/* Navigation */
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #dddddd;
+    text-decoration: none;
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff3d71;
+}
+
+
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+    min-height: 420px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 60px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0b0b10 10%,
+            rgba(11, 11, 16, 0.85) 45%,
+            rgba(11, 11, 16, 0.25)
+        ),
+        linear-gradient(
+            135deg,
+            #29101d,
+            #101018
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Decorative glow */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    background: #ff3d71;
+
+    border-radius: 50%;
+
+    filter: blur(180px);
+
+    opacity: 0.15;
+
+    right: 5%;
+    top: 20%;
+}
+
+
+/* Hero heading */
+
+.hero h2 {
+    font-size: 48px;
+
+    max-width: 650px;
+
+    margin-bottom: 15px;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Hero paragraph */
+
+.hero p {
+    font-size: 18px;
+
+    color: #c5c5c5;
+
+    margin-bottom: 30px;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Hero button */
+
+.hero button {
+    background: #ff3d71;
+
+    color: white;
+
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    position: relative;
+    z-index: 1;
+}
+
+.hero button:hover {
+    background: #ff174f;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 25px rgba(255, 61, 113, 0.3);
+}
+
+
+/* ================================
+   MAIN MOVIE SECTION
+================================ */
+
+main {
+    padding: 60px 7%;
+
+    max-width: 1500px;
+
+    margin: auto;
+}
+
+
+/* Main heading */
+
+main > h2 {
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+
+/* Main paragraph */
+
+main > p {
+    color: #999999;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   DATE SELECTION
+================================ */
+
+.dates {
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 45px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Date button */
+
+.dates button {
+    width: 75px;
+    height: 82px;
+
+    background: #181820;
+
+    color: #ffffff;
+
+    border: 1px solid #30303b;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 3px;
+
+    transition: 0.3s;
+}
+
+
+/* Date number */
+
+.dates button b {
+    font-size: 23px;
+}
+
+
+/* Date month */
+
+.dates button {
+    font-size: 12px;
+}
+
+
+/* Date hover */
+
+.dates button:hover {
+    border-color: #ff3d71;
+
+    transform: translateY(-3px);
+}
+
+
+/* Selected date */
+
+.dates button.active {
+    background: #ff3d71;
+
+    border-color: #ff3d71;
+
+    box-shadow: 0 5px 20px rgba(255, 61, 113, 0.25);
+}
+
+
+/* ================================
+   MOVIE CONTAINER
+================================ */
+
+.movie-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(330px, 1fr));
+
+    gap: 28px;
+}
+
+
+/* ================================
+   MOVIE CARD
+================================ */
+
+.movie-card {
+    background: #15151d;
+
+    border: 1px solid #292934;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Card hover */
+
+.movie-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #ff3d71;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(255, 61, 113, 0.08);
+}
+
+
+/* ================================
+   MOVIE POSTER
+================================ */
+
+.poster {
+    height: 280px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3d71,
+            #6c1d45,
+            #15151d
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 80px;
+
+    position: relative;
+}
+
+
+/* Poster overlay */
+
+.poster::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.4),
+            transparent
+        );
+}
+
+
+/* ================================
+   MOVIE INFORMATION
+================================ */
+
+.movie-info {
+    padding: 22px;
+}
+
+
+/* Movie title */
+
+.movie-info h2 {
+    font-size: 23px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Movie details */
+
+.movie-info p {
+    color: #aaaaaa;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+
+/* Rating */
+
+.movie-info p:first-of-type {
+    color: #ffd166;
+}
+
+
+/* Show timing heading */
+
+.movie-info h3 {
+    font-size: 16px;
+
+    margin-top: 20px;
+
+    margin-bottom: 13px;
+
+    color: #eeeeee;
+}
+
+
+/* ================================
+   SHOW TIME BUTTONS
+================================ */
+
+.times {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+
+/* Time button */
+
+.times button {
+    background: #20202a;
+
+    color: #ffffff;
+
+    border: 1px solid #3b3b48;
+
+    padding: 10px 13px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+
+/* Time hover */
+
+.times button:hover {
+    background: #ff3d71;
+
+    border-color: #ff3d71;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background: #111118;
+
+    border-top: 1px solid #292936;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    color: #999999;
+}
+
+
+footer h3 {
+    color: #ffffff;
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+
+footer p {
+    font-size: 14px;
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 700px) {
+
+    header {
+        height: 65px;
+
+        padding: 0 20px;
+    }
+
+
+    header h1 {
+        font-size: 20px;
+    }
+
+
+    nav {
+        display: none;
+    }
+
+
+    .hero {
+        min-height: 350px;
+
+        padding: 40px 25px;
+    }
+
+
+    .hero h2 {
+        font-size: 35px;
+    }
+
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    main {
+        padding: 45px 20px;
+    }
+
+
+    main > h2 {
+        font-size: 28px;
+    }
+
+
+    .movie-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .movie-card {
+        width: 100%;
+    }
+
+
+    .poster {
+        height: 240px;
+    }
+
+
+    .dates {
+        gap: 8px;
+    }
+
+
+    .dates button {
+        width: 65px;
+        height: 75px;
+    }
+
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 400px) {
+
+    .hero h2 {
+        font-size: 29px;
+    }
+
+
+    .movie-info {
+        padding: 18px;
+    }
+
+
+    .times button {
+        padding: 9px 10px;
+        font-size: 12px;
+    }
+
+}
+/* =================================
+   ABOUT THEATRE
+================================= */
+
+.about-theatre {
+    background: #111118;
+
+    padding: 70px 7%;
+
+    border-top: 1px solid #292936;
+}
+
+.about-content {
+    max-width: 1100px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 32px;
+
+    margin-bottom: 15px;
+
+    color: white;
+}
+
+.about-content > p {
+    max-width: 750px;
+
+    margin: 0 auto 40px;
+
+    color: #aaaaaa;
+
+    line-height: 1.8;
+}
+
+
+/* Theatre feature cards */
+
+.theatre-features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.theatre-features > div {
+    background: #181820;
+
+    border: 1px solid #292936;
+
+    border-radius: 12px;
+
+    padding: 25px 18px;
+
+    transition: 0.3s;
+}
+
+.theatre-features > div:hover {
+    border-color: #ff3d71;
+
+    transform: translateY(-5px);
+}
+
+.theatre-features span {
+    font-size: 32px;
+
+    display: block;
+
+    margin-bottom: 10px;
+}
+
+.theatre-features h3 {
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}
+
+.theatre-features p {
+    color: #999999;
+
+    font-size: 13px;
+}
+
+
+/* =================================
+   FOOTER UPDATE
+================================= */
+
+footer {
+    background: #0b0b10;
+
+    border-top: 1px solid #292936;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    color: #999999;
+}
+
+footer h3 {
+    color: white;
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+footer p {
+    font-size: 14px;
+
+    margin: 5px 0;
+}
+
+footer .copyright {
+    margin-top: 18px;
+
+    font-size: 12px;
+
+    color: #666666;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 800px) {
+
+    .theatre-features {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .theatre-features {
+        grid-template-columns: 1fr;
+    }
+
+}

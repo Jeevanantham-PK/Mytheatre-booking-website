@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Select Seats - My Theatre</title>
+
+    <link rel="stylesheet" href="seats.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>🎬 My Theatre</h1>
+
+        <a href="index.html">
+            ← Back to Movies
+        </a>
+
+    </header>
+
+
+    <!-- MOVIE / SHOW INFORMATION -->
+
+    <section class="booking-info">
+
+        <h2 id="movieName">
+            Movie Name
+        </h2>
+
+        <div class="show-details">
+
+            <span>
+                Date:
+                <strong id="showDate">-</strong>
+            </span>
+
+            <span>
+                Show Time:
+                <strong id="showTime">-</strong>
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEAT SELECTION -->
+
+    <main>
+
+        <h2>
+            Select Your Seats
+        </h2>
+
+
+        <!--
+            seats.js automatically creates:
+
+            A → 20 seats
+            B → 18 seats
+            C → 18 seats
+            ...
+            Z → 18 seats
+
+            A = no centre aisle
+
+            B-Z =
+            1 2 3 4 5 6 7 8 9
+                    GAP
+            10 11 12 13 14 15 16 17 18
+        -->
+
+        <div id="seatLayout" class="seat-layout"></div>
+
+
+        <!-- SCREEN -->
+
+        <div class="screen">
+            SCREEN
+        </div>
+
+
+        <!-- LEGEND -->
+
+        <div class="legend">
+
+            <div class="legend-item">
+
+                <span class="legend-seat available"></span>
+
+                Available
+
+            </div>
+
+
+            <div class="legend-item">
+
+                <span class="legend-seat selected"></span>
+
+                Selected
+
+            </div>
+
+
+            <div class="legend-item">
+
+                <span class="legend-seat booked"></span>
+
+                Booked
+
+            </div>
+
+
+            <div class="legend-item">
+
+                <span class="legend-seat unavailable"></span>
+
+                Unavailable
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOKING SUMMARY -->
+
+        <div class="summary">
+
+            <div class="summary-row">
+
+                <span>
+                    Selected Seats
+                </span>
+
+                <strong id="selectedSeats">
+                    None
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Total Tickets
+                </span>
+
+                <strong id="ticketCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Ticket Price
+                </span>
+
+                <strong>
+                    ₹130 / seat
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row total-row">
+
+                <span>
+                    Total Amount
+                </span>
+
+                <strong>
+                    ₹<span id="totalPrice">0</span>
+                </strong>
+
+            </div>
+
+
+            <button
+                id="continueButton"
+                onclick="continueBooking()">
+
+                Finalize Seats & Continue
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="seats.js"></script>
+
+</body>
+
+</html>

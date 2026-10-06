@@ -1,0 +1,572 @@
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #09090f;
+
+    color: white;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+
+    height: 68px;
+
+    background: #111118;
+
+    border-bottom: 1px solid #292936;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+}
+
+header h1 {
+
+    color: #ff3d71;
+
+    font-size: 23px;
+}
+
+header a {
+
+    color: #dddddd;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+header a:hover {
+
+    color: #ff3d71;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: auto;
+
+    padding: 45px 20px 70px;
+}
+
+main > h2 {
+
+    text-align: center;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.subtitle {
+
+    text-align: center;
+
+    color: #999;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   BOOKING SUMMARY
+========================================= */
+
+.booking-card {
+
+    background: #15151d;
+
+    border: 1px solid #292936;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+}
+
+.booking-card h3 {
+
+    margin-bottom: 18px;
+
+    color: #ff3d71;
+}
+
+.detail-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #252530;
+
+    color: #aaa;
+}
+
+.detail-row strong {
+
+    color: white;
+
+    text-align: right;
+}
+
+.total-row {
+
+    border-bottom: none;
+
+    margin-top: 8px;
+
+    padding-top: 18px;
+
+    font-size: 18px;
+}
+
+.total-row strong {
+
+    color: #ff3d71;
+
+    font-size: 21px;
+}
+
+
+/* =========================================
+   PAYMENT CARD
+========================================= */
+
+.payment-card {
+
+    background: #15151d;
+
+    border: 1px solid #292936;
+
+    border-radius: 12px;
+
+    padding: 25px;
+}
+
+.payment-card h3 {
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   PAYMENT OPTIONS
+========================================= */
+
+.payment-option {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 16px;
+
+    margin-bottom: 10px;
+
+    background: #1d1d27;
+
+    border: 1px solid #30303b;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.payment-option:hover {
+
+    border-color: #ff3d71;
+}
+
+.payment-option input {
+
+    accent-color: #ff3d71;
+
+    width: 17px;
+
+    height: 17px;
+}
+
+.payment-icon {
+
+    font-size: 25px;
+}
+
+.payment-option strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+}
+
+.payment-option small {
+
+    color: #999;
+
+    display: block;
+}
+
+
+/* =========================================
+   PAYMENT FORMS
+========================================= */
+
+.payment-form {
+
+    display: none;
+
+    margin-top: 18px;
+
+    padding: 18px;
+
+    background: #101017;
+
+    border-radius: 8px;
+
+    border: 1px solid #292936;
+}
+
+.payment-form.show {
+
+    display: block;
+}
+
+.payment-form label {
+
+    display: block;
+
+    color: #bbb;
+
+    font-size: 13px;
+
+    margin-bottom: 7px;
+}
+
+.payment-form input,
+.payment-form select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border-radius: 6px;
+
+    border: 1px solid #3a3a47;
+
+    background: #1a1a23;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.payment-form input:focus,
+.payment-form select:focus {
+
+    border-color: #ff3d71;
+}
+
+
+/* =========================================
+   CARD ROW
+========================================= */
+
+.card-row {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+.card-row > div {
+
+    flex: 1;
+}
+
+
+/* =========================================
+   PAY BUTTON
+========================================= */
+
+#payButton {
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #ff3d71;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#payButton:hover {
+
+    background: #ff174f;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(255, 61, 113, 0.25);
+}
+
+
+/* =========================================
+   CONFIRMATION
+========================================= */
+
+.confirmation {
+
+    display: none;
+
+    text-align: center;
+
+    background: #15151d;
+
+    border: 1px solid #292936;
+
+    border-radius: 14px;
+
+    padding: 35px 25px;
+
+    margin-top: 25px;
+}
+
+.confirmation.show {
+
+    display: block;
+}
+
+.success-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #24b47e;
+
+    color: white;
+
+    font-size: 35px;
+
+    font-weight: bold;
+}
+
+.confirmation h2 {
+
+    color: #24d18b;
+
+    margin-bottom: 10px;
+}
+
+.confirmation > p {
+
+    color: #aaa;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   TICKET
+========================================= */
+
+.ticket {
+
+    text-align: left;
+
+    background: #101017;
+
+    border: 1px dashed #555;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    margin-bottom: 25px;
+}
+
+.ticket h3 {
+
+    color: #ff3d71;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+}
+
+.ticket p {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 9px 0;
+
+    color: #aaa;
+
+    border-bottom: 1px solid #24242d;
+}
+
+.ticket p:last-child {
+
+    border-bottom: none;
+}
+
+.ticket strong {
+
+    color: white;
+
+    text-align: right;
+}
+
+
+/* =========================================
+   HOME BUTTON
+========================================= */
+
+.home-button {
+
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 13px 25px;
+
+    background: #ff3d71;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.home-button:hover {
+
+    background: #ff174f;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    header {
+
+        padding: 0 20px;
+    }
+
+    header h1 {
+
+        font-size: 19px;
+    }
+
+    main {
+
+        padding: 30px 15px 50px;
+    }
+
+    main > h2 {
+
+        font-size: 25px;
+    }
+
+    .detail-row {
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .detail-row strong {
+
+        text-align: left;
+    }
+
+    .card-row {
+
+        flex-direction: column;
+    }
+
+    .ticket p {
+
+        flex-direction: column;
+
+        gap: 4px;
+    }
+
+    .ticket strong {
+
+        text-align: left;
+    }
+}

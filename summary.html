@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Summary - My Theatre</title>
+
+    <link rel="stylesheet"
+          href="summary.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>🎬 My Theatre</h1>
+
+    <a href="seats.html">
+        ← Back to Seats
+    </a>
+
+</header>
+
+
+<main>
+
+    <div class="summary-card">
+
+        <h2>Booking Summary</h2>
+
+
+        <div class="movie-info">
+
+            <h3 id="movieName">
+                Movie
+            </h3>
+
+            <p>
+                Date:
+                <strong id="showDate">-</strong>
+            </p>
+
+            <p>
+                Show Time:
+                <strong id="showTime">-</strong>
+            </p>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="summary-row">
+
+            <span>
+                Selected Seats
+            </span>
+
+            <strong id="selectedSeats">
+                None
+            </strong>
+
+        </div>
+
+
+        <div class="summary-row">
+
+            <span>
+                Total Tickets
+            </span>
+
+            <strong id="ticketCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="summary-row">
+
+            <span>
+                Ticket Price
+            </span>
+
+            <strong>
+                ₹130 / seat
+            </strong>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="total-row">
+
+            <span>
+                Total Amount
+            </span>
+
+            <strong>
+                ₹<span id="totalPrice">0</span>
+            </strong>
+
+        </div>
+
+
+        <button onclick="continueToMobile()">
+
+            Continue
+
+        </button>
+
+    </div>
+
+</main>
+
+
+<script src="summary.js"></script>
+
+</body>
+
+</html>

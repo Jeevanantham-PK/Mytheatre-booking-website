@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Theatre</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+
+    <header>
+
+        <h1>🎬 My Theatre</h1>
+
+        <nav>
+
+            <a href="#">Home</a>
+
+            <a href="#movies">Movies</a>
+
+            <a href="#">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =================================
+         HERO SECTION
+    ================================== -->
+
+    <section class="hero">
+
+        <h2>
+            Welcome to My Theatre
+        </h2>
+
+        <p>
+            Book your movie tickets easily and quickly.
+        </p>
+
+        <button onclick="goToMovies()">
+            Browse Movies
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================
+         MOVIE SECTION
+    ================================== -->
+
+    <main id="movies">
+
+        <h2>
+            Now Showing
+        </h2>
+
+        <p>
+            Select a date and choose your movie.
+        </p>
+
+
+        <!-- =================================
+             DATE SELECTION
+        ================================== -->
+
+        <div class="dates">
+
+            <button
+                class="active"
+                onclick="selectDate(this)">
+
+                <b>03</b>
+                OCT
+
+            </button>
+
+
+            <button onclick="selectDate(this)">
+
+                <b>04</b>
+                OCT
+
+            </button>
+
+
+            <button onclick="selectDate(this)">
+
+                <b>05</b>
+                OCT
+
+            </button>
+
+
+            <button onclick="selectDate(this)">
+
+                <b>06</b>
+                OCT
+
+            </button>
+
+
+            <button onclick="selectDate(this)">
+
+                <b>07</b>
+                OCT
+
+            </button>
+
+
+            <button onclick="selectDate(this)">
+
+                <b>08</b>
+                OCT
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================
+             MOVIES ARE CREATED BY script.js
+        ================================== -->
+
+        <div
+            id="movieContainer"
+            class="movie-container">
+        </div>
+
+    </main>
+
+
+
+    <!-- =================================
+         ABOUT OUR THEATRE
+    ================================== -->
+
+    <section class="about-theatre">
+
+        <div class="about-content">
+
+            <h2>
+                About My Theatre
+            </h2>
+
+            <p>
+                Welcome to My Theatre, your destination
+                for an enjoyable and comfortable movie
+                experience. We bring you the latest movies
+                with convenient show timings and easy
+                online ticket booking.
+            </p>
+
+
+            <div class="theatre-features">
+
+
+                <div>
+
+                    <span>🎬</span>
+
+                    <h3>
+                        Latest Movies
+                    </h3>
+
+                    <p>
+                        Enjoy movies on the big screen.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span>💺</span>
+
+                    <h3>
+                        Comfortable Seats
+                    </h3>
+
+                    <p>
+                        Choose your preferred seats.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span>🎟️</span>
+
+                    <h3>
+                        Easy Booking
+                    </h3>
+
+                    <p>
+                        Book your tickets quickly online.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span>📱</span>
+
+                    <h3>
+                        Online Tickets
+                    </h3>
+
+                    <p>
+                        Get your booking details after payment.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer>
+
+        <h3>
+            🎬 My Theatre
+        </h3>
+
+        <p>
+            Your movie. Your seat. Your experience.
+        </p>
+
+        <p>
+            Comfortable • Convenient • Entertaining
+        </p>
+
+        <p class="copyright">
+            © 2026 My Theatre. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
